@@ -1,7 +1,7 @@
 conda 24.9.2
 # using rna from SRA-SRX357400
 
-# trim and filter raw reads (version = 0.23.4)
+# trim and filter raw reads (fastp v0.23.4)
 fastp -i combined_nucella_rna.fastq -o fastp_combined_nucella_rna.fastq -t 40
 
 
