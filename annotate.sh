@@ -10,3 +10,8 @@ STAR --runThreadN 30 --runMode genomeGenerate --genomeDir /home/meghan/nucella_g
 
 #map rna 
 
+STAR --genomeDir /home/meghan/nucella_genome/annotate/index \
+      --readFilesIn /home/meghan/nucella_genome/annotate/rna/fastp_combined_nucella_rna.fastq \
+      --outSAMtype BAM SortedByCoordinate \
+      --outFileNamePrefix mapped_fastp_rna
+
