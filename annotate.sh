@@ -15,3 +15,8 @@ STAR --genomeDir /home/meghan/nucella_genome/annotate/index \
       --outSAMtype BAM SortedByCoordinate \
       --outFileNamePrefix mapped_fastp_rna
 
+#RepeatModeler (version = 2.0.6)
+BuildDatabase -name jc-genome JC-genome_v3-230128.fasta
+RepeatModeler -threads 32 -database jc-genome -LTRStruct
+
+
