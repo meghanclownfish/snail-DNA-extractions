@@ -1,4 +1,4 @@
-conda 24.9.2
+#conda 24.9.2
 # using rna from SRA-SRX357400
 
 # trim and filter raw reads (fastp v0.23.4)
