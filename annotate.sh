@@ -1,5 +1,5 @@
 #conda 24.9.2
-# using rna from SRA-SRX357400
+
 
 # trim and filter raw reads (fastp v0.23.4)
 fastp -i combined_nucella_rna.fastq -o fastp_combined_nucella_rna.fastq -t 40
@@ -16,7 +16,12 @@ STAR --genomeDir /home/meghan/nucella_genome/annotate/index \
       --outFileNamePrefix mapped_fastp_rna
 
 #RepeatModeler (version = 2.0.6)
-makeblastdb -name nucella_genome /home/meghan/nucella_genome/decontaminate/len1kb_20x_metazoa_polish3.fasta
-RepeatModeler -threads 32 -database jc-genome -LTRStruct
+conda activate repeatmodeler_env
+BuildDatabase -name nucella_genome len1kb_20x_metazoa_polish3.fasta 
+nohup bash -c "RepeatModeler -LTRStruct -database nucella_genome -threads 38" >  Rmodler.log 2>&1 &
+
+RepeatMasker -pa 10 -lib families.fa -xsmall -gff len1kb_20x_metazoa_polish3.fasta
 
 
+#braker3
+--AUGUSTUS_CONFIG_PATH /home/meghan/config
