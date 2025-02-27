@@ -13,6 +13,14 @@ singularity run ../dfam-tetools-latest.sif
 BuildDatabase -name nucella_genome_no_scaffold hifi_2kb_decontaminated.fa 
 nohup bash -c "RepeatModeler -LTRStruct -database nucella_genome_no_scaffold -threads 32" >  Rmodler.log 2>&1 &
 
+#or 
+
+#start an instance 
+
+singularity instance start ../dfam-tetools-latest.sif run_rm
+singularity run instance://run_rm nohup RepeatModeler -LTRStruct -database nucella_genome_no_scaffold -threads 32 &
+
+
 RepeatMasker -pa 10 -lib families.fa -xsmall -gff len1kb_20x_metazoa_polish3.fasta
 
 
