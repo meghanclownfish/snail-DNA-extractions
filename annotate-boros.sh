@@ -16,9 +16,12 @@ nohup bash -c "RepeatModeler -LTRStruct -database nucella_genome_no_scaffold -th
 #or 
 
 #start an instance 
+conda activate repeatmodeler_env
 
 singularity instance start ../dfam-tetools-latest.sif run_rm
 singularity run instance://run_rm nohup RepeatModeler -LTRStruct -database nucella_genome_no_scaffold -threads 32 &
+
+singularity exec instance://run_rm nohup RepeatModeler -LTRStruct -database nucella_genome_no_scaffold -threads 45 -recoverDir RM_79.ThuFeb271636162025 &
 
 
 RepeatMasker -pa 10 -lib families.fa -xsmall -gff len1kb_20x_metazoa_polish3.fasta
