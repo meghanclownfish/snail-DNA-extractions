@@ -29,3 +29,12 @@ RepeatMasker -pa 10 -lib families.fa -xsmall -gff len1kb_20x_metazoa_polish3.fas
 
 #braker3
 --AUGUSTUS_CONFIG_PATH /home/meghan/config
+
+
+
+##firefly + new hifi
+
+BuildDatabase -name nucella_genome_new new_hifiasm_2kb.a_ctg.fa
+
+nohup singularity exec instance://run_rm RepeatModeler -LTRStruct -database nucella_genome_new -threads 35 &
+
