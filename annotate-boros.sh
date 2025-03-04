@@ -14,6 +14,7 @@ singularity instance start ../dfam-tetools-latest.sif run_rm
 
 #run modeler and masker
 nohup singularity exec instance://run_rm RepeatModeler -LTRStruct -database nucella_genome_no_scaffold -threads 35 &
+nohup singularity exec instance://run_rm RepeatMasker -pa 35 -species all -xsmall ../hifi_2kb_decontaminated.fa &
 nohup singularity exec instance://run_rm RepeatMasker -pa 35 -lib ../nucella_genome_no_scaffold-families.fa -xsmall -gff ../hifi_2kb_decontaminated.fa &
 
 
