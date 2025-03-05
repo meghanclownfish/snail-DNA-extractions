@@ -26,9 +26,9 @@ nohup singularity exec instance://run_rm RepeatMasker -pa 35 -lib ../nucella_gen
 
 #activate conda env with singularity
 conda activate repeatmodeler_env
-singularity run ../dfam-tetools-latest.sif
+singularity run ./dfam-tetools-latest.sif
 
-BuildDatabase -name nucella_genome_new new_hifiasm_2kb.a_ctg.fa
+BuildDatabase -name nucella_genome_new new_hifiasm_2kb.a_ctg.filtered.fa
 
 #start an instance 
 singularity instance start ../dfam-tetools-latest.sif run_rm
