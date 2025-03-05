@@ -16,9 +16,9 @@ singularity instance start ../dfam-tetools-latest.sif run_rm
 nohup singularity exec instance://run_rm RepeatModeler -LTRStruct -database nucella_genome_no_scaffold -threads 35 &
 nohup singularity exec instance://run_rm RepeatMasker -pa 35 -lib ../nucella_genome_no_scaffold-families.fa -xsmall -gff ../hifi_2kb_decontaminated.fa &
 
+#map rna reads on discovery with HISAT2: output all_mapped_rna.bam
 
-#braker3
---AUGUSTUS_CONFIG_PATH /home/meghan/config
+
 
 
 
