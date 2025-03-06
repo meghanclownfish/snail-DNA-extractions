@@ -1,3 +1,5 @@
+#https://github.com/Gaius-Augustus/BRAKER/issues/609
+
 singularity build braker3.sif docker://teambraker/braker3:latest
 
 #pull OrthoDB file from https://bioinf.uni-greifswald.de/bioinf/partitioned_odb12/
