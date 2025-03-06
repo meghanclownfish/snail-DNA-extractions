@@ -20,3 +20,11 @@ nohup singularity exec -B /home/meghan/nucella_genome/annotate/no_scaffold/v1_br
 --bam=/home/meghan/nucella_genome/annotate/no_scaffold/all_mapped_rna.bam \
 --AUGUSTUS_CONFIG_PATH=/home/meghan/config &
 
+#entap on firefly 
+
+singularity run ../entap.sif
+EnTAP --config --run-ini entap_run.params --entap-ini entap_config.ini -t 5
+
+
+
+
