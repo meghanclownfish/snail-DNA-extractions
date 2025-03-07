@@ -20,6 +20,14 @@ nohup singularity exec -B /home/meghan/nucella_genome/annotate/no_scaffold/v1_br
 --bam=/home/meghan/nucella_genome/annotate/no_scaffold/all_mapped_rna.bam \
 --AUGUSTUS_CONFIG_PATH=/home/meghan/config &
 
+#initial busco: 72.7%, running again with hints 
+
+nohup singularity exec -B /home/meghan/nucella_genome/annotate/no_scaffold/braker /home/meghan/braker3.sif braker.pl \
+--genome=/home/meghan/nucella_genome/annotate/no_scaffold/hifi_2kb_decontaminated.fa.masked \
+--species=v1_nucella --threads=35 --useexisting --workingdir=braker_r2_v1 \
+--hints=/home/meghan/nucella_genome/annotate/no_scaffold/braker/hintsfile.gff \
+--AUGUSTUS_CONFIG_PATH=/home/meghan/config &
+
 #entap on firefly 
 
 singularity run ../entap.sif
