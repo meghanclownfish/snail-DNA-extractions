@@ -20,9 +20,9 @@ nohup singularity exec -B /home/meghan/nucella_genome/annotate/no_scaffold/v1_br
 --bam=/home/meghan/nucella_genome/annotate/no_scaffold/all_mapped_rna.bam \
 --AUGUSTUS_CONFIG_PATH=/home/meghan/config &
 
-#initial busco: 72.7%, running again with eukaryota instead of metazoa 
+#initial busco: 72.7%, running again with eukaryota + mollusca instead of metazoa 
 
-nohup singularity exec -B /home/meghan/nucella_genome/annotate/no_scaffold/brakerv2 /home/meghan/braker3.sif braker.pl \
+nohup singularity exec -B /home/meghan/nucella_genome/annotate/no_scaffold/brakerR2 /home/meghan/braker3.sif braker.pl \
 --genome=/home/meghan/nucella_genome/annotate/no_scaffold/hifi_2kb_decontaminated.fa.masked \
 --species=v1_nucella  --softmasking --threads=35 \
 --prot_seq=/home/meghan/nucella_genome/database/eukaryota_and_molluscan_protien.fasta \
