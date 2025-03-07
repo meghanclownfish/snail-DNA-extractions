@@ -26,7 +26,7 @@ nohup singularity exec -B /home/meghan/nucella_genome/annotate/no_scaffold/brake
 --genome=/home/meghan/nucella_genome/annotate/no_scaffold/hifi_2kb_decontaminated.fa.masked \
 --species=v1_nucella  --softmasking --threads=35 \
 --prot_seq=/home/meghan/nucella_genome/database/eukaryota_and_molluscan_protien.fasta \
---bam=/home/meghan/nucella_genome/annotate/no_scaffold/masked_all_mapped_rna.bam \
+--bam=/home/meghan/nucella_genome/annotate/no_scaffold/all_mapped_rna.bam \
 --AUGUSTUS_CONFIG_PATH=/home/meghan/config &
 
 
