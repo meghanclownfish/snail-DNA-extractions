@@ -53,6 +53,10 @@ agat_sp_extract_sequences.pl -g iso_filt_aug_enforcement.gtf \
 singularity run ../entap.sif
 EnTAP --config --run-ini entap_run.params --entap-ini entap_config.ini -t 5
 
+#update all paths with given info before moving on, for eggNog SQL database, include path but not file (EnTap will not understand if you give file) 
+
+EnTAP --run -i /home/meghan/nucella_genome/annotate/no_scaffold/brakerR3/braker/alternate_tsebra/output_prot/iso_filt_aug_enforcement.faa -t 35
+
 
 
 
