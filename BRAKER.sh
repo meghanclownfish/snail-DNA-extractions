@@ -48,7 +48,7 @@ agat_sp_extract_sequences.pl -g iso_filt_aug_enforcement.gtf \
 -f /home/meghan/nucella_genome/annotate/no_scaffold/hifi_2kb_decontaminated.fa.masked \
 -o iso_filt_aug_enforcement.faa -p
 
-#entap on firefly 
+#entap with uniprot_sprot an refseq_invertebrarte
 
 singularity run ../entap.sif
 EnTAP --config --run-ini entap_run.params --entap-ini entap_config.ini -t 5
