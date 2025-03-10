@@ -29,6 +29,24 @@ nohup singularity exec -B /home/meghan/nucella_genome/annotate/no_scaffold/brake
 --bam=/home/meghan/nucella_genome/annotate/no_scaffold/all_mapped_rna.bam \
 --AUGUSTUS_CONFIG_PATH=/home/meghan/config &
 
+# not much better; tsebra is doing something weird. go in and run manually and reinforce agusstus to fix 
+
+#enforce aug
+singularity exec /home/meghan/braker3.sif tsebra.py \
+-g /home/meghan/nucella_genome/annotate/no_scaffold/brakerR3/braker/GeneMark-ETP/genemark.gtf \
+-k /home/meghan/nucella_genome/annotate/no_scaffold/brakerR3/braker/Augustus/augustus.hints.gtf \
+-e /home/meghan/nucella_genome/annotate/no_scaffold/brakerR3/braker/hintsfile.gff \
+-c no_enforcement.cfg -o aug_enforcement.gtf 
+
+# keep longest iso and extract protein seq
+
+agat_sp_keep_longest_isoform.pl -f aug_enforcement.gtf -o iso_filt_aug_enforcement.gtf
+# 9597 L2 isoforms with CDS removed (shortest CDS)
+
+# extract prot seq 
+agat_sp_extract_sequences.pl -g iso_filt_aug_enforcement.gtf \
+-f /home/meghan/nucella_genome/annotate/no_scaffold/hifi_2kb_decontaminated.fa.masked \
+-o iso_filt_aug_enforcement.faa -p
 
 #entap on firefly 
 
