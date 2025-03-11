@@ -60,3 +60,15 @@ EnTAP --run -i /home/meghan/nucella_genome/annotate/no_scaffold/brakerR3/braker/
 
 
 
+
+##### VERSION 2 #######
+nohup singularity exec -B /home/meghan/nucella_genome/annotate/v2_nucella /home/meghan/braker3.sif braker.pl \
+--genome=/home/meghan/nucella_genome/annotate/v2_nucella/new_hifiasm_2kb.a_ctg.filtered.fa.masked \
+--species=v2_nucella  --softmasking --threads=35 \
+--prot_seq=/home/meghan/nucella_genome/database/eukaryota_and_molluscan_protien.fasta \
+--bam=/home/meghan/nucella_genome/annotate/v2_nucella/v2_all_mapped_rna.bam \
+--AUGUSTUS_CONFIG_PATH=/home/meghan/config &
+
+
+
+
