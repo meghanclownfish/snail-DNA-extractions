@@ -69,6 +69,6 @@ nohup singularity exec -B /home/meghan/nucella_genome/annotate/v2_nucella /home/
 --bam=/home/meghan/nucella_genome/annotate/v2_nucella/v2_all_mapped_rna.bam \
 --AUGUSTUS_CONFIG_PATH=/home/meghan/config &
 
-
+EnTAP --run -i /home/meghan/nucella_genome/annotate/v2_nucella/braker/TSEBRA_alt/iso_filt_v2_aug_enforcement.faa -t 35
 
 
